@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Eye, ImageOff } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const DEFAULT_FALLBACK_IMAGE = "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80";
@@ -34,7 +34,7 @@ export default function ProductCard({ product, onQuoteRequest, onViewDetails, vi
               src={imageSrc}
               alt={product.name}
               onError={() => setImgError(true)}
-              className="w-full h-full object-cover rounded-[10px] group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain p-1 rounded-[10px] group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
             {product.badge && (
@@ -67,14 +67,15 @@ export default function ProductCard({ product, onQuoteRequest, onViewDetails, vi
 
         {/* CTA */}
         <div className="mt-4 sm:mt-0 w-full sm:w-auto flex-shrink-0">
-          <button
-            type="button"
-            onClick={() => onQuoteRequest(product)}
+          <a
+            href={`https://wa.me/971543808614?text=${encodeURIComponent(`Hello Rukn Al Marjan, I would like to request a quote for ${product.name} (${product.category}).`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group/btn flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-full border border-forest/60 text-forest hover:bg-forest hover:text-white font-medium text-sm transition-all duration-200"
           >
             <span>Request a Quote</span>
             <ArrowRight className="w-3.5 h-3.5 stroke-[2.2] transition-transform duration-300 group-hover/btn:translate-x-1" />
-          </button>
+          </a>
         </div>
       </div>
     );
@@ -89,11 +90,11 @@ export default function ProductCard({ product, onQuoteRequest, onViewDetails, vi
       transition={{ duration: 0.35, ease: 'easeOut' }}
       className="group relative flex flex-col justify-between rounded-[22px] bg-white border border-[#E7E8E4] shadow-xs hover:border-forest/30 hover:shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 overflow-hidden"
     >
-      {/* Upper Product Image Area */}
-      <div className="relative w-full aspect-[4/3.2] bg-[#F4F3EF] overflow-hidden flex items-center justify-center">
+      {/* Upper Product Image Area: 1:1 Square to match 600x600 photo dimensions */}
+      <div className="relative w-full aspect-square bg-[#F5F5F3] overflow-hidden flex items-center justify-center">
         {/* Optional Badge */}
         {product.badge && (
-          <div className="absolute top-4 left-4 z-10">
+          <div className="absolute top-3.5 left-3.5 z-10">
             <span
               className={`text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-xs ${getBadgeStyle(
                 product.badge
@@ -112,25 +113,6 @@ export default function ProductCard({ product, onQuoteRequest, onViewDetails, vi
           className="w-full h-full object-cover select-none transition-transform duration-500 ease-out group-hover:scale-105"
           loading="lazy"
         />
-
-        {/* Gradient Bottom Vignette for text contrast on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-        {/* Desktop Quick View Overlay Button */}
-        <div className="absolute inset-x-0 bottom-4 z-10 hidden lg:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              if (onViewDetails) onViewDetails(product);
-              else onQuoteRequest(product);
-            }}
-            className="pointer-events-auto inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md text-charcoal border border-charcoal/10 text-xs font-semibold shadow-md hover:bg-forest hover:text-white transition-all duration-200"
-          >
-            <Eye className="w-3.5 h-3.5" />
-            <span>View Details</span>
-          </button>
-        </div>
       </div>
 
       {/* Lower Details Area */}
@@ -155,16 +137,17 @@ export default function ProductCard({ product, onQuoteRequest, onViewDetails, vi
           </div>
         </div>
 
-        {/* Request a Quote Full-Width Button */}
-        <button
-          type="button"
-          onClick={() => onQuoteRequest(product)}
-          className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-full border border-forest/60 bg-transparent text-forest hover:bg-forest hover:text-white font-medium text-sm transition-all duration-200 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-forest/30"
-          aria-label={`Request a quote for ${product.name}`}
+        {/* Request a Quote Full-Width WhatsApp Button */}
+        <a
+          href={`https://wa.me/971543808614?text=${encodeURIComponent(`Hello Rukn Al Marjan, I would like to request a quote for ${product.name} (${product.category}).`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-full border border-forest/60 bg-transparent text-forest hover:bg-forest hover:text-white font-medium text-sm transition-all duration-200 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-forest/30 text-center"
+          aria-label={`Request a quote for ${product.name} on WhatsApp`}
         >
           <span>Request a Quote</span>
           <ArrowRight className="w-4 h-4 stroke-[2.2] transition-transform duration-300 ease-out group-hover/btn:translate-x-1" />
-        </button>
+        </a>
       </div>
     </motion.div>
   );

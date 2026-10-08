@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -19,7 +20,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-warm-white selection:bg-mint selection:text-white">
+      <div className="min-h-screen flex flex-col bg-warm-white selection:bg-mint selection:text-white relative">
         {/* Premium Spacious Navbar */}
         <Navbar />
 
@@ -32,6 +33,9 @@ export default function App() {
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
+
+        {/* Floating WhatsApp Action Button */}
+        <WhatsAppButton />
 
         {/* Executive Footer */}
         <Footer />

@@ -68,9 +68,9 @@ export default function CategorySection() {
 
         {/* ============================================================== */}
         {/* CIRCULAR CATEGORIES GRID                                       */}
-        {/* Desktop: 11 columns | Laptop: 6-8 cols | Mobile: 3-4 cols      */}
+        {/* Mobile: 4 cols | Tablet: 4-6 cols | Desktop: 8 cols            */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-11 gap-y-7 sm:gap-y-9 gap-x-3 sm:gap-x-5 lg:gap-x-6 items-start">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-y-7 sm:gap-y-9 gap-x-3 sm:gap-x-5 lg:gap-x-6 items-start justify-items-center">
           {categories.map((category, index) => (
             <CategoryCard
               key={category.id}

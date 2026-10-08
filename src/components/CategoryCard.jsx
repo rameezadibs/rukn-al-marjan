@@ -27,7 +27,7 @@ export default function CategoryCard({ category, index }) {
         aria-label={`Browse ${category.name} category`}
       >
         {/* Pure Circular Image */}
-        <div className="w-22 h-22 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden shadow-md group-hover:shadow-xl border border-charcoal/10 bg-[#F4F3EF] transition-all duration-300 ease-out group-hover:-translate-y-1.5 flex items-center justify-center">
+        <div className="w-[76px] h-[76px] sm:w-26 sm:h-26 lg:w-32 lg:h-32 rounded-full overflow-hidden shadow-md group-hover:shadow-xl border border-charcoal/10 bg-[#F4F3EF] transition-all duration-300 ease-out group-hover:-translate-y-1.5 flex items-center justify-center flex-shrink-0">
           <img
             src={imgSrc}
             alt={category.name}
@@ -38,7 +38,7 @@ export default function CategoryCard({ category, index }) {
         </div>
 
         {/* Category Title Label */}
-        <h3 className="mt-2.5 sm:mt-3 text-xs sm:text-[13.5px] lg:text-[14px] font-semibold text-charcoal group-hover:text-forest transition-colors duration-200 text-center leading-snug max-w-[130px]">
+        <h3 className="mt-2 sm:mt-3 text-[11.5px] sm:text-[13px] lg:text-[14px] font-semibold text-charcoal group-hover:text-forest transition-colors duration-200 text-center leading-tight max-w-[95px] sm:max-w-[115px] lg:max-w-[130px] line-clamp-2">
           {category.name}
         </h3>
       </Link>

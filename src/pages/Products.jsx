@@ -158,34 +158,40 @@ export default function Products() {
                 <div className="absolute bottom-3 inset-x-8 h-10 rounded-full bg-black/40 filter blur-md" />
 
                 <div className="relative z-10 grid grid-cols-3 gap-3 w-full h-full items-center">
-                  {/* Item 1: Insulated Bottle */}
-                  <div className="h-44 rounded-2xl bg-white/10 border border-white/10 p-2 flex flex-col items-center justify-center transform -rotate-3 hover:rotate-0 transition-transform">
-                    <img
-                      src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=300&q=80"
-                      alt="Insulated Bottle"
-                      className="w-full h-28 object-contain"
-                    />
-                    <span className="text-[10px] text-white/70 font-medium mt-1">Bottles</span>
+                  {/* Item 1: Tumbler with Handle (/4.webp) */}
+                  <div className="h-44 rounded-2xl bg-white/10 border border-white/15 p-2 flex flex-col items-center justify-between transform -rotate-3 hover:rotate-0 transition-transform overflow-hidden shadow-lg backdrop-blur-xs">
+                    <div className="w-full h-28 rounded-xl overflow-hidden bg-white/90 p-1 flex items-center justify-center">
+                      <img
+                        src="/4.webp"
+                        alt="Tumbler with Handle"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-[11px] text-white/90 font-medium py-1">Tumblers</span>
                   </div>
 
-                  {/* Item 2: Executive Gift Set */}
-                  <div className="h-52 rounded-2xl bg-white/15 border border-mint/20 p-2.5 flex flex-col items-center justify-center transform scale-105 shadow-xl">
-                    <img
-                      src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=300&q=80"
-                      alt="Gift Set"
-                      className="w-full h-32 object-contain"
-                    />
-                    <span className="text-[10px] text-mint font-semibold mt-1">Gift Sets</span>
+                  {/* Item 2: Table-Top Fan (/1.webp) */}
+                  <div className="h-52 rounded-2xl bg-white/15 border border-mint/30 p-2.5 flex flex-col items-center justify-between transform scale-105 shadow-2xl overflow-hidden backdrop-blur-xs">
+                    <div className="w-full h-34 rounded-xl overflow-hidden bg-white/90 p-1.5 flex items-center justify-center">
+                      <img
+                        src="/1.webp"
+                        alt="Table-Top Fan"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-[11px] text-mint font-semibold py-1">Desk Fans</span>
                   </div>
 
-                  {/* Item 3: Notebook & Pen */}
-                  <div className="h-44 rounded-2xl bg-white/10 border border-white/10 p-2 flex flex-col items-center justify-center transform rotate-3 hover:rotate-0 transition-transform">
-                    <img
-                      src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=300&q=80"
-                      alt="Notebook"
-                      className="w-full h-28 object-contain"
-                    />
-                    <span className="text-[10px] text-white/70 font-medium mt-1">Stationery</span>
+                  {/* Item 3: Fast-Charge Power Bank (/6.webp) */}
+                  <div className="h-44 rounded-2xl bg-white/10 border border-white/15 p-2 flex flex-col items-center justify-between transform rotate-3 hover:rotate-0 transition-transform overflow-hidden shadow-lg backdrop-blur-xs">
+                    <div className="w-full h-28 rounded-xl overflow-hidden bg-white/90 p-1 flex items-center justify-center">
+                      <img
+                        src="/6.webp"
+                        alt="Fast-Charge Power Bank"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-[11px] text-white/90 font-medium py-1">Powerbanks</span>
                   </div>
                 </div>
               </div>
@@ -275,21 +281,15 @@ export default function Products() {
               <p className="text-sm sm:text-base text-white/80 leading-relaxed">
                 Our enterprise team can custom-source, prototype, and brand bespoke promotional items tailored to your campaign.
               </p>
-              <button
-                type="button"
-                onClick={() =>
-                  handleOpenQuoteModal({
-                    name: 'Custom Product Sourcing',
-                    category: 'Bespoke Inquiries',
-                    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=300&q=80',
-                    availability: 'Custom Order',
-                  })
-                }
-                className="group flex-shrink-0 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-mint text-white font-semibold text-sm hover:bg-[#0092cb] active:scale-[0.98] transition-all duration-200 shadow-md"
+              <a
+                href={`https://wa.me/971543808614?text=${encodeURIComponent('Hello Rukn Al Marjan, I would like to inquire about custom product sourcing and enterprise promotional gifts.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex-shrink-0 inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-mint text-white font-semibold text-sm hover:bg-[#0092cb] active:scale-[0.98] transition-all duration-200 shadow-md text-center"
               >
                 <span>Talk to Our Team</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.2] transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -45,7 +45,7 @@ export default function HeroSlider({ slides }) {
     <section
       id="home"
       aria-label="Promotional Banner Carousel"
-      className="relative w-full h-[280px] sm:h-[360px] md:h-[400px] lg:h-[440px] xl:h-[460px] bg-warm-white overflow-hidden select-none"
+      className="relative w-full h-[380px] sm:h-[400px] md:h-[430px] lg:h-[460px] xl:h-[480px] bg-warm-white overflow-hidden select-none"
     >
       {/* Rectangular Banner Slides */}
       <div className="relative w-full h-full">
@@ -63,9 +63,9 @@ export default function HeroSlider({ slides }) {
         type="button"
         onClick={handlePrev}
         aria-label="Previous Slide"
-        className="absolute left-3 sm:left-5 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg group focus:outline-none"
+        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg group focus:outline-none"
       >
-        <ChevronLeft className="w-5 h-5 sm:w-5 sm:h-5 stroke-[2.2] transition-transform duration-200 group-hover:-translate-x-0.5" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.2] transition-transform duration-200 group-hover:-translate-x-0.5" />
       </button>
 
       {/* Navigation Arrow Right */}
@@ -73,15 +73,15 @@ export default function HeroSlider({ slides }) {
         type="button"
         onClick={handleNext}
         aria-label="Next Slide"
-        className="absolute right-3 sm:right-5 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg group focus:outline-none"
+        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg group focus:outline-none"
       >
-        <ChevronRight className="w-5 h-5 sm:w-5 sm:h-5 stroke-[2.2] transition-transform duration-200 group-hover:translate-x-0.5" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.2] transition-transform duration-200 group-hover:translate-x-0.5" />
       </button>
 
       {/* Pagination Indicators */}
-      <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 z-30 pointer-events-none">
-        <div className="max-w-7xl mx-auto pl-14 sm:pl-20 md:pl-24 pr-6 sm:pr-10 lg:pr-12 flex items-center justify-between">
-          <div className="flex items-center gap-2 pointer-events-auto">
+      <div className="absolute bottom-3 sm:bottom-6 left-0 right-0 z-30 pointer-events-none">
+        <div className="max-w-7xl mx-auto pl-12 sm:pl-16 md:pl-20 lg:pl-24 pr-4 sm:pr-8 lg:pr-12 flex items-center justify-between">
+          <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto">
             {slides.map((slide, index) => {
               const isActive = index === currentIndex;
               return (

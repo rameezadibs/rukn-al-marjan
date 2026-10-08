@@ -68,8 +68,12 @@ export default function QuoteModal({ isOpen, onClose, product }) {
       setErrors(validationErrors);
       return;
     }
-    // Simulation of quote submission
+    // Simulation of quote submission and WhatsApp direct redirect
     setSubmitted(true);
+    const textMsg = `Hello Rukn Al Marjan, I would like to request a quote:%0A%0A*Product:* ${product?.name || 'Corporate Merchandise'} (${product?.category || ''})%0A*Name:* ${formData.fullName}%0A*Company:* ${formData.companyName || 'N/A'}%0A*Quantity:* ${formData.quantity} units%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Notes:* ${formData.message || 'None'}`;
+    setTimeout(() => {
+      window.open(`https://wa.me/971543808614?text=${textMsg}`, '_blank');
+    }, 400);
   };
 
   return (
@@ -157,7 +161,7 @@ export default function QuoteModal({ isOpen, onClose, product }) {
                           onError={(e) => {
                             e.target.src = "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=300&q=80";
                           }}
-                          className="w-full h-full object-cover rounded-[8px]"
+                          className="w-full h-full object-contain p-0.5 rounded-[8px]"
                         />
                       </div>
                       <div className="flex-1 min-w-0">
